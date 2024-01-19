@@ -1,0 +1,15 @@
+﻿@using EdukateMVC.ViewModels.ProfessionVM;
+@model ProfessionCreateVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form method="post" class="container">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control">
+        <span asp-validation-for="Name"></span>
+    </div>
+    <button type="submit" class="btn btn-outline-primary">Submit</button>
+</form>
+

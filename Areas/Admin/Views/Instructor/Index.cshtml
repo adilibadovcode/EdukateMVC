@@ -1,0 +1,32 @@
+﻿@model List<InstructorListItemVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <table class="table table-bordered">
+        <a class="btn btn-outline-success my-4" asp-action="Create">Create</a>
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Image</th>
+                <th scope="col">Profession</th>
+                <th scope="col" colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td><img width="80" src="~/@item.Image" /></td>
+                    <td>@item.Profession.Name</td>
+                    <td><a class="btn btn-outline-info" asp-action="Update" asp-route-id="@item.Id">Update</a></td>
+                    <td><a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
